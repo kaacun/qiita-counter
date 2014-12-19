@@ -11,3 +11,6 @@ $config['qiita_domain'] = '****.qiita.com'
 $config['max_users'] = '50'
 $config['max_tags'] = '100'
 ````
+
+- unicornの起動
+`unicorn -c unicorn.conf -D -E production`
