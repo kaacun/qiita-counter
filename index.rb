@@ -8,9 +8,9 @@ require './config'
 
 set :environment, :production
 
-get '/show' do
+get '/users' do
   # 全ユーザ情報を取得
-  res = open('https://' + $config['qiita_domain'] + '/api/v2/users?per_page=50', "Authorization" => $config['token'])
+  res = open('https://' + $config['qiita_domain'] + '/api/v2/users?per_page=' + $config['max_users'], "Authorization" => $config['token'])
   code, message = res.status
   if code != '200'
     return nil
