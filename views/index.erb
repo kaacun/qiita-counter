@@ -8,11 +8,13 @@
   <body>
     <table class="table table-striped">
       <tr>      
+        <th></th>
         <th>id</th>
         <th>post count</th>
       </tr>
     <% @post_counts.each do |post_count| %>
       <tr>      
+        <td><img src="<%=  post_count['image'] %>"></td>
         <td><%=  post_count['id'] %></td>
         <td><%=  post_count['count'] %></td>
       </tr>

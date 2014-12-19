@@ -25,7 +25,7 @@ get '/show' do
       return nil
     end
     posts = JSON.parse(res.read)
-    post_count = {"id" => user['id'], "count" => posts.length}
+    post_count = {"id" => user['id'], "image" => user['profile_image_url'], "count" => posts.length}
     @post_counts.push(post_count)
   end
   @post_counts.sort_by!{|val| -val['count']}
