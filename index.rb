@@ -32,3 +32,16 @@ get '/users' do
  
   erb :user
 end
+
+get '/tags' do
+  # 全タグ情報を取得
+  res = open('https://' + $config['qiita_domain'] + '/api/v2/tags?per_page=' + $config['max_tags'], "Authorization" => $config['token'])
+  code, message = res.status
+  if code != '200'
+    return nil
+  end
+  @tags = JSON.parse(res.read)
+  @tags.sort_by!{|val| -val['items_count']}
+ 
+  erb :tag
+end
