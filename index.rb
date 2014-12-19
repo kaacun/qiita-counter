@@ -30,5 +30,5 @@ get '/users' do
   end
   @post_counts.sort_by!{|val| -val['count']}
  
-  erb :index
+  erb :user
 end
