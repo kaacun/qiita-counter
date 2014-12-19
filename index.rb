@@ -8,6 +8,10 @@ require './config'
 
 set :environment, :production
 
+get '/' do
+  erb :index
+end
+
 get '/users' do
   # 全ユーザ情報を取得
   res = open('https://' + $config['qiita_domain'] + '/api/v2/users?per_page=' + $config['max_users'], "Authorization" => $config['token'])
