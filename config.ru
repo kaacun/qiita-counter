@@ -1,6 +1,4 @@
 require 'sinatra'
-require 'sinatra/reloader'
-require 'server'
 require 'json'
 require 'pp'
 require 'open-uri'
